@@ -16,6 +16,9 @@ function StockMarketNews({newsData}) {
 console.log(newsData)
   return (
     <div className=" flex flex-col justify-center items-center">
+      <div className="bg-neoyellow py-4 mb-10 px-7 rounded-3xl border-solid border-t-4 border-r-[12px] border-b-[12px] border-l-4 border-black shadow-4xl">
+          <h1 className="text-6xl font-semibold">MARKET NEWS</h1>
+        </div>
 
 
       {/* ARTICLE 1 */}
