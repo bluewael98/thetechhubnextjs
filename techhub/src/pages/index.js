@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import LandingPage from './scenes/landingpage'
+import StockMarketCharts from './scenes/StockMarketCharts'
+import StockMarketData from './scenes/StockMarketData'
+import StockMarketNews from './scenes/StockMarketNews'
 
 
 export default function Home() {
@@ -9,11 +12,14 @@ export default function Home() {
         <title>thetechhub</title>
         <meta name="description" content="tech related" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main >
+      <main className='flex justify-center items-center flex-col' >
         
         <LandingPage />
+        <StockMarketData />
+        <StockMarketNews />
+        <StockMarketCharts />
+        
         
       </main>
     </>
