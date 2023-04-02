@@ -14,6 +14,16 @@ module.exports = {
     fontFamily: {
       Oswald: ["Oswald", "sans-serif"],
   },
+  screens: {
+    xxs: "370px",
+    xs: "480px",
+    ss: "620px",
+    sm: "768px",
+    md: "1020px",
+    lg: "1240px",
+    xlg: "1300px",
+    xxl: "1700px", 
+  },
 
 },
   plugins: [],

@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import LandingPage from './scenes/landingpage'
-import Layout from '../../components/Layout'
 import React from "react";
 import Image from "next/image";
+import Audio from './scenes/Audio';
 
 
 export async function getServerSideProps() {
@@ -33,18 +33,19 @@ export default function Home({stockData, newsData}) {
         <meta name="description" content="tech related" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className='flex justify-center items-center flex-col' >
-        <Layout>
+      <main className='flex justify-center items-center flex-col pt-[200px]' >
+        <section className='xxs:my-[70px] md:my-[100px]'>
         <LandingPage />
+        </section>
         {/* PRICES */}
-        <section className="flex flex-col justify-center items-center my-40">
-        <div className="bg-neoyellow py-4 px-7 rounded-3xl border-solid border-t-4 border-r-[12px] border-b-[12px] border-l-4 border-black shadow-4xl">
-          <h1 className="text-6xl font-semibold">MARKET PRICES</h1>
+        <section className="flex flex-col justify-center items-center my-40 w-screen overflow-hidden px-2">
+        <div className="bg-neoyellow py-4 px-7 rounded-3xl border-solid border-t-4 border-r-[12px] border-b-[12px] border-l-4 border-black shadow-4xl" id='stockmarketprices'>
+          <h1 className="lg:text-6xl text-4xl font-semibold">MARKET PRICES</h1>
         </div>
-        <div className="flex justify-center items-center w-screen px-4 gap-16">
+        <div className="grid lg:grid-cols-3 content-center xxs:grid-cols-1  px-4 lg:gap-16">
           {/* CONTAINER TSLA */}
           <div className="  bg-neoblue  font-Oswald my-10 rounded-3xl border-solid border-t-4 border-r-[12px] border-b-[12px] border-l-4 border-black shadow-4xl flex flex-col items-center justify-center px-10 py-5">
-            <div className=" bg-neogreen  rounded-3xl flex align-bottom truncate flex-col border-solid border-t-2 border-r-[6px] border-b-[6px] border-l-2 border-black p-4 px-12 py-5 ">
+            <div className=" bg-neogreen  rounded-3xl flex align-bottom truncate flex-col border-solid border-t-2 border-r-[6px] border-b-[6px] border-l-2 border-black p-4 xxs:px-6 sm:px-12 py-5 ">
               {/* STOCK NAME & PRICE */}
               <div
                 className="flex justify-center my-10 flex-col items-center bg-white rounded-3xl gap-4 p-4 border-solid border-t-2 border-r-[6px] border-b-[6px] border-l-2 border-black
@@ -111,7 +112,7 @@ export default function Home({stockData, newsData}) {
           </div>
            {/* CONTAINER AAPL */}
         <div className="  bg-neoblue  font-Oswald my-10 rounded-3xl border-solid border-t-4 border-r-[12px] border-b-[12px] border-l-4 border-black shadow-4xl flex flex-col items-center justify-center px-10 py-5">
-          <div className=" bg-neogreen  rounded-3xl flex align-bottom truncate flex-col border-solid border-t-2 border-r-[6px] border-b-[6px] border-l-2 border-black p-4 px-12 py-5 ">
+          <div className=" bg-neogreen  rounded-3xl flex align-bottom truncate flex-col border-solid border-t-2 border-r-[6px] border-b-[6px] border-l-2 border-black p-4  xxs:px-6 sm:px-12px-12 py-5 ">
             {/* STOCK NAME  */}
             <div
               className="flex justify-center my-10 flex-col items-center bg-white rounded-3xl gap-4 p-4 border-solid border-t-2 border-r-[6px] border-b-[6px] border-l-2 border-black
@@ -167,7 +168,7 @@ export default function Home({stockData, newsData}) {
 
         {/* CONTAINER MSFT */}
         <div className="  bg-neoblue  font-Oswald my-10 rounded-3xl border-solid border-t-4 border-r-[12px] border-b-[12px] border-l-4 border-black shadow-4xl flex flex-col items-center justify-center px-10 py-5">
-          <div className=" bg-neogreen  rounded-3xl flex align-bottom truncate flex-col border-solid border-t-2 border-r-[6px] border-b-[6px] border-l-2 border-black p-4 px-12 py-5 ">
+          <div className=" bg-neogreen xxs:px-6 sm:px-12  rounded-3xl flex align-bottom truncate flex-col border-solid border-t-2 border-r-[6px] border-b-[6px] border-l-2 border-black p-4 px-12 py-5 ">
             {/* STOCK NAME */}
             <div
               className="flex justify-center my-10 flex-col items-center bg-white rounded-3xl gap-4 p-4 border-solid border-t-2 border-r-[6px] border-b-[6px] border-l-2 border-black
@@ -223,10 +224,12 @@ export default function Home({stockData, newsData}) {
 
         </div>
       </section>
+
+
       {/* NEWS */}
-      <div className=" flex flex-col justify-center items-center">
-      <div className="bg-neoyellow py-4 mb-10 px-7 rounded-3xl border-solid border-t-4 border-r-[12px] border-b-[12px] border-l-4 border-black shadow-4xl">
-          <h1 className="text-6xl font-semibold">MARKET NEWS</h1>
+      <div className=" flex flex-col justify-center items-center w-screen overflow-hidden px-2">
+      <div className="bg-neoyellow py-4 px-7 rounded-3xl border-solid border-t-4 border-r-[12px] border-b-[12px] border-l-4 border-black shadow-4xl" id='stockmarketnews'>
+          <h1 className="lg:text-6xl text-4xl font-semibold">MARKET NEWS</h1>
         </div>
 
 
@@ -237,8 +240,8 @@ export default function Home({stockData, newsData}) {
         target="_blank"
         key={article.id}
       >
-        <div className=" bg-white flex justify-center content-center m-5 rounded-2xl w-[800px] border-solid border-t-2 border-r-[6px] border-b-[6px] border-l-2 border-black hover:scale-105 transition duration-300 cursor-pointer">
-          <div className="flex flex-col justify-start mx-5 my-5 w-[400px]">
+        <div className=" bg-white flex xxs:flex-col sm:flex-row justify-center items-center content-center m-5 rounded-2xl xs:max-w-[800px] border-solid border-t-2 border-r-[6px] border-b-[6px] border-l-2 border-black hover:scale-105 transition duration-300 cursor-pointer xxs:max-w-[340px] max-w-full-xs ">
+          <div className="flex flex-col justify-start mx-5 my-5 max-w-[400px]">
             {/* ARTICLE 1 TITLE */}
             <div className=" font-Oswald font-bold text-xl justify-center content-center flex">
               {article.title}
@@ -264,8 +267,7 @@ export default function Home({stockData, newsData}) {
       </a>
              ))}
     </div>
-        </Layout>
-        
+    <Audio />
       
         
         

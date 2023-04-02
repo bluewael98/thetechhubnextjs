@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Layout from "../../components/Layout";
 
@@ -19,9 +19,9 @@ const StockMarketData = ({ stockData }) => {
   
   return (
     <Layout>
-      <section className="flex flex-col justify-center items-center my-40">
-        <div className="bg-neoyellow py-4 px-7 rounded-3xl border-solid border-t-4 border-r-[12px] border-b-[12px] border-l-4 border-black shadow-4xl">
-          <h1 className="text-6xl font-semibold">MARKET PRICES</h1>
+      <section className="flex flex-col justify-center items-center my-40 w-screen">
+        <div className="bg-neoyellow py-4 px-7 rounded-3xl border-solid border-t-4 border-r-[12px] border-b-[12px] border-l-4 border-black shadow-4xl w-full" id="marketprices">
+          <h1 className="lg:text-4xl md:text-4xl xxs:text-2xl font-semibold">MARKET PRICES</h1>
         </div>
 
         <div className="flex justify-center items-center w-screen px-4 gap-16">
