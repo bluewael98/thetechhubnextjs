@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import LandingPage from './scenes/landingpage'
+import LandingPage from './scenes/LandingPage'
 import React from "react";
 import Image from "next/image";
 import Audio from './scenes/Audio';
